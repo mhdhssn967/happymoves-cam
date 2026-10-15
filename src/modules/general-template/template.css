@@ -1,0 +1,261 @@
+/* ---------- Screen 4: General Template Module & Screen 6: Summary ---------- */
+
+.module-view-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  width: 100%;
+}
+
+.module-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.module-intro__title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.module-intro__desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* Screen 4 Top Status Bar (Reps, Time, Pause) */
+.module-status-bar {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+.module-status-bar__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.module-status-bar__icon {
+  color: var(--primary);
+}
+
+.module-status-bar__label {
+  color: var(--text-muted);
+}
+
+.module-status-bar__val {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.module-status-bar__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.module-status-bar__btn:hover {
+  background: #e2e8f0;
+  color: var(--primary);
+}
+
+.module-status-bar__btn--play {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: var(--primary);
+}
+
+/* Screen 4 Interactive Stage (Serene meadow with concentric rings) */
+.target-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  min-height: 280px;
+  background: #e0f2fe;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(15, 23, 42, 0.04);
+  border: 1.5px solid #bae6fd;
+  cursor: crosshair;
+  user-select: none;
+  touch-action: none;
+}
+
+/* Concentric Target Rings */
+.target-rings {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.15s ease-out;
+}
+
+.target-ring {
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.target-ring--outer {
+  width: 110px;
+  height: 110px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 2px dashed #10b981;
+  animation: ringPulse 3s infinite ease-in-out;
+}
+
+.target-ring--middle {
+  width: 72px;
+  height: 72px;
+  background: rgba(37, 99, 235, 0.15);
+  border: 2px solid #3b82f6;
+}
+
+.target-ring--center {
+  width: 28px;
+  height: 28px;
+  background: #2563eb;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
+.target-ring--progress {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.35);
+  transition: transform 0.08s linear;
+}
+
+/* Patient Cursor Icon */
+.patient-cursor {
+  position: absolute;
+  transform: translate(-3px, -3px);
+  pointer-events: none;
+  z-index: 20;
+  transition: transform 0.04s linear;
+}
+
+/* Action Buttons */
+.module-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Screen 6: Exercise Complete Summary Card */
+.summary-view-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.summary-view-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.summary-view-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+}
+
+.summary-view-exercise {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: -0.5rem 0 0;
+}
+
+.summary-view-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* 3 Metrics Cards (Screen 6) */
+.summary-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.summary-metric-card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.summary-metric-card__label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.summary-metric-card__val {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.summary-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.5;
+  }
+}

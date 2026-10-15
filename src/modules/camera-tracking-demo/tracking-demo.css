@@ -1,0 +1,134 @@
+/* ---------- Screen 5: Camera Tracking Demo Styling ---------- */
+
+.camera-demo-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  width: 100%;
+}
+
+/* Segmented Pill Mode Switcher (Screen 5: [ Hand Mode ] [ Pose Mode ]) */
+.mode-segmented-control {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  display: flex;
+  gap: 4px;
+}
+
+.mode-segmented-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mode-segmented-btn:hover {
+  color: var(--text);
+}
+
+.mode-segmented-btn--active {
+  background: #ffffff;
+  color: var(--primary);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+/* Camera Viewport Container */
+.camera-viewport-card {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 400px;
+  background: #0f172a;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+/* Camera Access Info Hint */
+.camera-info-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #059669;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+}
+
+.camera-info-hint__icon {
+  flex-shrink: 0;
+  color: #10b981;
+}
+
+/* Large Action Button */
+.camera-action-container {
+  width: 100%;
+}
+
+/* Patient Tips Checklist Card (Screen 5) */
+.patient-tips-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.patient-tips-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.patient-tips-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.patient-tips-icon {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+/* Live Metrics Strip */
+.live-metrics-section {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.live-metrics-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
